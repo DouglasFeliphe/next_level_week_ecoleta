@@ -1,0 +1,19 @@
+
+npm i @types/express -D para adicionar tipagens
+npm i typescript -D para reconhecer arquivos typescript
+npm i ts-node -D - para rodar o typescript no node
+
+npx typescript --init para criar o arquivo de configuração do typescript
+npm i ts-node-dev -D para atualizar o código automaticamente
+
+npm i cors 
+npm i @types/cors
+
+npx ts-node src/server.ts
+
+  "scripts": {    
+    "knex:seed": "knex --knexfile knexfile.ts seed:run", : insere arquivos no banco    
+  },
+  "scripts": {
+    "dev": "ts-node-dev --ignore-watch node_modules src/server.ts", : agiliza o tempo de recarga da aplicação   
+  },
