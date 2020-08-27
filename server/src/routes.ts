@@ -10,7 +10,7 @@ const routes = express.Router()
 // listar todos os itens
 routes.get('/items', itemsController.index)
 
-// listar todos os pontos de coleta
+// listar pontos de coleta específicos
 routes.get('/points', pointsController.index)
 
 // mostrar ponto de coleta espeçífico

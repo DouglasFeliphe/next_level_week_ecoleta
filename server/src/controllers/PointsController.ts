@@ -5,6 +5,7 @@ class PointsController {
 
     async index(request: Request, response: Response) {
 
+        // BUSCANDO PONTOS DE COLETA ESPECÍFICOS
         const { city, uf, items } = request.query;
 
         const parsedItems = String(items)
@@ -18,7 +19,6 @@ class PointsController {
             .where('uf', String(uf))
             .distinct()
             .select('points.*')
-
 
         return response.json(points)
     }
@@ -35,7 +35,7 @@ class PointsController {
         const items = await connection('items')
             .join('point_items', 'items.id', '=', 'point_items.item_id')
             .where('point_items.point_id', id)
-            .select('items.title')
+            .select('items.*')
 
         return response.json({ point, items })
     }
